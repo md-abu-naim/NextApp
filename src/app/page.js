@@ -5,6 +5,9 @@ export default function Home() {
       <h1 className="text-4xl sm:text-6xl font-bold text-center">
         Welcome to <span className="text-blue-600">MyApp</span>
       </h1>
+      <p className="text-lg sm:text-xl text-center max-w-2xl">
+        This is a sample application built with Next.js and Tailwind CSS. Explore the features and enjoy your experience!
+      </p>
     </div>
   );
 }
