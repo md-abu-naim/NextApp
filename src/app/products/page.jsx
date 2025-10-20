@@ -8,7 +8,8 @@ const Products = async () => {
         <div className="p-7">
             <h1 className="text-5xl font-bold text-center my-7 underline">OUR ALL PRODUCTS</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                <div className="max-w-sm bg-black rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                {
+                    products?.map(p => (<div key={p._id} className="max-w-sm bg-black rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                     <img
                         src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=500&auto=format&fit=crop&q=60"
                         alt="Product"
@@ -35,7 +36,8 @@ const Products = async () => {
                             View Details
                         </button>
                     </div>
-                </div>
+                </div>))
+                }
             </div>
 
         </div>
