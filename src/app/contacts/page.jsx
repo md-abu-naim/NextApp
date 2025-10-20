@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Contacts = () => {
-    return (
-        <div className="min-h-screen  flex items-center justify-center p-4">
+  return (
+    <div className="min-h-screen  flex items-center justify-center p-4">
       <div className="bg-black rounded-xl shadow-md p-8 w-full max-w-md">
         <h1 className="text-3xl font-bold mb-6 text-center text-white">
           Contact Us
@@ -48,7 +48,7 @@ const Contacts = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Contacts;
