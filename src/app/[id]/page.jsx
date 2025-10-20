@@ -23,13 +23,13 @@ const ProductDetails = async({params}) => {
           <div>
             <h1 className="text-3xl font-bold mb-3 ">{product.name}</h1>
             <p className="text-sm  mb-4">Category: {product.category}</p>
-            <p className=" mb-6">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+            <p className=" mb-6">{product.description}</p>
           </div>
 
           <div className="flex items-center justify-between mb-6">
-            <span className="text-2xl font-bold text-yellow-600">15</span>
-            <span className={`text-sm font-medium `}>
-              active
+            <span className="text-2xl font-bold text-yellow-600">{product.price}</span>
+            <span className={`text-sm font-medium ${product.status === "In Stock" ? "text-green-600" : "text-red-600"}`}>
+              {product.status}
             </span>
           </div>
 
