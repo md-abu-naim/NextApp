@@ -4,7 +4,8 @@ import { MongoClient, ServerApiVersion } from 'mongodb';
 
 export const collectionName = {
     products : 'products',
-    orders: 'orders'
+    orders: 'orders',
+    users: 'users'
 }
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
