@@ -1,6 +1,11 @@
 
-const Orders = () => {
+const Orders = async() => {
+
+  const res = await fetch('http://localhost:3000/api/orders')
+  const orders = await res.json()
+  console.log(orders);
   return (
+    <div>hle</div>
     // <div className="bg-white shadow-md rounded-xl p-6 max-w-3xl mx-auto mt-8 border border-gray-100">
     //   {/* Customer Info */}
     //   <div className="flex items-center gap-4 mb-6">
