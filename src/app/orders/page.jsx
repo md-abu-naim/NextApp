@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Orders = () => {
-    return (
-        <div className="bg-white shadow-md rounded-xl p-6 max-w-3xl mx-auto mt-8 border border-gray-100">
+  return (
+    <div className="bg-white shadow-md rounded-xl p-6 max-w-3xl mx-auto mt-8 border border-gray-100">
       {/* Customer Info */}
       <div className="flex items-center gap-4 mb-6">
         <img
@@ -33,13 +33,12 @@ const Orders = () => {
         <p>
           <span className="font-medium text-gray-700">Status:</span>{" "}
           <span
-            className={`${
-              order.orderStatus === "Shipped"
+            className={`${order.orderStatus === "Shipped"
                 ? "text-blue-600"
                 : order.orderStatus === "Delivered"
-                ? "text-green-600"
-                : "text-yellow-600"
-            }`}
+                  ? "text-green-600"
+                  : "text-yellow-600"
+              }`}
           >
             {order.orderStatus}
           </span>
@@ -72,11 +71,10 @@ const Orders = () => {
               <p className="text-sm mt-1">
                 <span className="font-medium text-gray-700">Status:</span>{" "}
                 <span
-                  className={`${
-                    product.status === "In Stock"
+                  className={`${product.status === "In Stock"
                       ? "text-green-600"
                       : "text-red-600"
-                  }`}
+                    }`}
                 >
                   {product.status}
                 </span>
@@ -94,7 +92,7 @@ const Orders = () => {
         View Order Details
       </button>
     </div>
-    );
+  );
 };
 
 export default Orders;
