@@ -17,8 +17,8 @@ const Users = async () => {
           <p className="text-sm text-gray-500">{user.email}</p>
           <span
             className={`mt-2 px-3 py-1 text-xs font-medium rounded-full ${user.status === "Active"
-                ? "bg-green-100 text-green-600"
-                : "bg-red-100 text-red-500"
+              ? "bg-green-100 text-green-600"
+              : "bg-red-100 text-red-500"
               }`}
           >
             {user.status}
