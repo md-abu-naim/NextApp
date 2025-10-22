@@ -6,6 +6,7 @@ export const GET = async (req) => {
 
     const data = dbConnect(collectionName.orders)
     const result = await data.find().toArray()
+    console.log(result);
 
     return NextResponse.json(result)
 }
