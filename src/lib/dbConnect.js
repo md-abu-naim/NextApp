@@ -1,6 +1,12 @@
 
 import { MongoClient, ServerApiVersion } from 'mongodb';
 
+
+export const collectionName = {
+    products : 'products',
+    orders: 'orders'
+}
+
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const dbConnect = () => {
     const uri = `mongodb+srv://${process.env.USER_NAME}:${process.env.USER_PASS}@cluster0.zyfftle.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
