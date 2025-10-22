@@ -1,5 +1,5 @@
 
-const Orders = async () => {
+const Users = async () => {
 
   const res = await fetch('http://localhost:3000/api/users')
   const users = await res.json()
@@ -56,4 +56,4 @@ const Orders = async () => {
   );
 };
 
-export default Orders;
+export default Users;
