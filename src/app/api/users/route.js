@@ -4,7 +4,7 @@ import { NextResponse } from "next/server"
 
 export const GET = async (req) => {
 
-    const data = dbConnect(collectionName.orders)
+    const data = dbConnect(collectionName.users)
     const result = await data.find().toArray()
     console.log(result);
 

@@ -1,100 +1,54 @@
 
 const Orders = async () => {
 
-  const res = await fetch('http://localhost:3000/api/orders')
-  const orders = await res.json()
-  console.log(orders);
+  const res = await fetch('http://localhost:3000/api/users')
+  const users = await res.json()
+  console.log(users);
   return (
-    <div className="">
+    <div className="grid grid-cols-4 gap-4">
       {
-        orders.map(order => <div className=" shadow-md rounded-xl p-6 max-w-3xl mx-auto mt-8 border border-gray-100">
-          {/* Customer Info */}
-          <div className="flex items-center gap-4 mb-6">
-            <img
-              src={order.customerImage}
-              alt={order.customerName}
-              className="w-16 h-16 rounded-full object-cover border"
-            />
-            <div>
-              <h2 className="text-xl font-semibold ">
-                {order.customerName}
-              </h2>
-              <p className="text-sm">{order.email}</p>
-              <p className="text-sm">{order.phone}</p>
-              <p className="text-sm">{order.address}</p>
+        users.map(user => <div key={user._id} className="bg-white shadow-md rounded-2xl p-5 flex flex-col items-center border border-gray-100 hover:shadow-lg transition-all duration-300">
+          <img
+            src={user.profile}
+            alt={user.name}
+            className="w-24 h-24 rounded-full object-cover border-4 border-green-500 mb-4"
+          />
+          <h2 className="text-lg font-semibold text-gray-800">{user.name}</h2>
+          <p className="text-sm text-gray-500">{user.email}</p>
+          <span
+            className={`mt-2 px-3 py-1 text-xs font-medium rounded-full ${user.status === "Active"
+                ? "bg-green-100 text-green-600"
+                : "bg-red-100 text-red-500"
+              }`}
+          >
+            {user.status}
+          </span>
+
+          <div className="w-full mt-5 text-sm text-gray-600 space-y-2">
+            <div className="flex justify-between">
+              <span className="font-medium text-gray-700">Role:</span>
+              <span className="text-gray-500">{user.role}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="font-medium text-gray-700">Phone:</span>
+              <span className="text-gray-500">{user.phone}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="font-medium text-gray-700">Address:</span>
+              <span className="text-gray-500 text-right">{user.address}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="font-medium text-gray-700">Joined:</span>
+              <span className="text-gray-500">{user.createdAt}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="font-medium text-gray-700">Last Login:</span>
+              <span className="text-gray-500">{user.lastLogin}</span>
             </div>
           </div>
 
-          {/* Order Info */}
-          <div className="flex flex-wrap items-center justify-between mb-6 text-sm">
-            <p>
-              <span className="font-medium ">Order Date:</span>{" "}
-              {order.date}
-            </p>
-            <p>
-              <span className="font-medium ">Payment:</span>{" "}
-              <span className="text-green-600">{order.paymentStatus}</span>
-            </p>
-            <p>
-              <span className="font-medium ">Status:</span>{" "}
-              <span
-                className={`${order.orderStatus === "Shipped"
-                  ? "text-blue-600"
-                  : order.orderStatus === "Delivered"
-                    ? "text-green-600"
-                    : "text-yellow-600"
-                  }`}
-              >
-                {order.orderStatus}
-              </span>
-            </p>
-            <p>
-              <span className="font-medium ">Total:</span>{" "}
-              <span className="text-yellow-600 font-semibold">
-                ${order.totalPrice}
-              </span>
-            </p>
-          </div>
-
-          {/* Product List */}
-          <div className="space-y-4">
-            {order.products.map((product) => (
-              <div
-                key={product._id}
-                className="flex items-center gap-4 rounded-lg p-3"
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-20 h-20 rounded-lg object-cover"
-                />
-                <div className="flex-1">
-                  <h3 className="font-semibold">{product.name}</h3>
-                  <p className="text-sm">
-                    {product.category} • {product.shortBio}
-                  </p>
-                  <p className="text-sm mt-1">
-                    <span className="font-medium ">Status:</span>{" "}
-                    <span
-                      className={`${product.status === "In Stock"
-                        ? "text-green-600"
-                        : "text-red-600"
-                        }`}
-                    >
-                      {product.status}
-                    </span>
-                  </p>
-                </div>
-                <span className="text-yellow-600 font-semibold">
-                  ${product.price}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* View Button */}
-          <button className="mt-6 w-full bg-yellow-500 text-white font-medium py-2 rounded hover:bg-yellow-600 transition-colors">
-            View Order Details
+          <button className="mt-5 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg font-medium transition">
+            View Profile
           </button>
         </div>)
       }
