@@ -15,6 +15,7 @@ const Navber = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li><Link href='/'>Home</Link></li>
                             <li><Link href='/products'>Products</Link></li>
+                            <li><Link href='/orders'>Products</Link></li>
                             <li><Link href='/contacts'>Contact Us</Link></li>
                             <li><Link href='/about'>About Us</Link></li>
                         </ul>
@@ -25,6 +26,7 @@ const Navber = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li><Link href='/'>Home</Link></li>
                         <li><Link href='/products'>Products</Link></li>
+                        <li><Link href='/orders'>Orders</Link></li>
                         <li><Link href='/contacts'>Contact Us</Link></li>
                         <li><Link href='/about'>About Us</Link></li>
                     </ul>

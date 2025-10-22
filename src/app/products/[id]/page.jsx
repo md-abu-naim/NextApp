@@ -7,7 +7,6 @@ const ProductDetails = async ({ params }) => {
     const id = { _id: new ObjectId(p) }
     const data = dbConnect()
     const product = await data.findOne(id)
-    console.log(product);
 
     return (
         <div className="min-h-screen  flex items-center justify-center p-4">

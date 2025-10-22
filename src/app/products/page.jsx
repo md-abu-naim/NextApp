@@ -31,7 +31,7 @@ const Products = async () => {
                             </div>
 
                             <button className="w-full bg-yellow-500 text-white font-medium py-2 rounded hover:bg-yellow-600 transition-colors">
-                                <Link href={p._id}>
+                                <Link href={`/products/${p._id}`}>
                                     View Details
                                 </Link>
                             </button>
